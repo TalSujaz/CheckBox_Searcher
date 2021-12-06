@@ -1,0 +1,42 @@
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.exe
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.deps.json
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.runtimeconfig.json
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.runtimeconfig.dev.json
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.dll
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher_MarkupCompile.cache
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher_MarkupCompile.lref
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.g.resources
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.AssemblyInfo.cs
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.dll
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
+C:\Users\User\source\repos\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.genruntimeconfig.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.exe
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.deps.json
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.runtimeconfig.json
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.runtimeconfig.dev.json
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.dll
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher_MarkupCompile.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher_MarkupCompile.lref
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.g.resources
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.AssemblyInfo.cs
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.dll
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.genruntimeconfig.cache
