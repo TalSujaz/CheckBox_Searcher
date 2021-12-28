@@ -35,7 +35,7 @@
                         <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-edit-50.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="restartBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="30" Height="30" >
+                <Button x:Name="restartBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="30" Height="30" Click="restartBtn_Click" >
                     <!--<Image HorizontalAlignment="Left"  Source="Icons\icons8-delete-50.png" />-->
                     <Button.Background>
                         <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-restart-50.png"/>

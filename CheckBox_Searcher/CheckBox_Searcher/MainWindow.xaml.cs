@@ -32,33 +32,8 @@ namespace CheckBox_Searcher
             InitializeComponent();
             FillingTree();
         }
-        /// <summary>
-        /// Filling tree different values
-        /// </summary>
-        private void FillingTree()
-        {
-            Nodes.Clear();
-            XElement xelement = XElement.Load(SettingsHelper.xmlConncation);
-                var level_1_items = new Node() { Text = " users ",IsChecked=false };
-                IEnumerable<XElement> users = xelement.Elements();
-                foreach(XElement user in users)
-                {
-                string myId = user.Attribute("id").Value;
-                var level_2_items = new Node() { Text = "Id "+myId , IsChecked = false };
-                    level_2_items.Parent.Add(level_1_items);
-                    level_1_items.Children.Add(level_2_items);
-                IEnumerable<XElement> userInfo = user.Elements();
-                foreach(XElement info in userInfo)
-                    {
-                    var level_3_items = new Node() { Text = info.Name+": "+info.Value,IsChecked=false };
-                    level_3_items.Parent.Add(level_2_items);
-                    level_2_items.Children.Add(level_3_items);
-                    }
-            }
-            Nodes.Add(level_1_items); 
-            treeView.ItemsSource = Nodes;
-        }
-
+      
+        #region UI methods
         /// <summary>
         /// Take Id from CheckBox Uid and transfer value to CheckBoxId struct
         /// </summary>
@@ -83,8 +58,94 @@ namespace CheckBox_Searcher
                 CheckBoxId.checkBoxId = currentCheckBox.Uid;
             }
         }
+        private void restartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Restart();
+        }
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (HasSelectedNodes())
+            {
+                MessageWindow myWin = new MessageWindow();
+                myWin.ShowDialog();
+                if (myWin.DialogResult == true)
+                {
+                    DeleteSelectedNodes();
+                }
+            }
+        }
+        #endregion
 
+        #region Privte methods
+        /// <summary>
+        /// Filling tree different values
+        /// </summary>
+        private void FillingTree()
+        {
+            Nodes.Clear();
+            XElement xelement = XElement.Load(SettingsHelper.xmlConncation);
+            var level_1_items = new Node() { Text = " users ", IsChecked = false };
+            IEnumerable<XElement> users = xelement.Elements();
+            foreach (XElement user in users)
+            {
+                string myId = user.Attribute("id").Value;
+                var level_2_items = new Node() { Text = "Id " + myId, IsChecked = false };
+                level_2_items.Parent.Add(level_1_items);
+                level_1_items.Children.Add(level_2_items);
+                IEnumerable<XElement> userInfo = user.Elements();
+                foreach (XElement info in userInfo)
+                {
+                    var level_3_items = new Node() { Text = info.Name + ": " + info.Value, IsChecked = false };
+                    level_3_items.Parent.Add(level_2_items);
+                    level_2_items.Children.Add(level_3_items);
+                }
+            }
+            Nodes.Add(level_1_items);
+            treeView.ItemsSource = Nodes;
+        }
+        private bool HasSelectedNodes()
+        {
+            foreach (Node firstNode in Nodes.First().Children)
+            {
+                if (firstNode.IsChecked == true)
+                {
+                    return true;
+                }
+                foreach (Node n in firstNode.Children)
+                {
+                    if (n.IsChecked == true)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private void Restart()
+        {
+            FillingTree();
+        }
+        private void DeleteSelectedNodes()
+        {
 
+            foreach (Node firstNode in Nodes.First().Children)
+            {
+                if (firstNode.IsChecked == true)
+                {
+                    XmlHelper.DeleteUser(firstNode.Text);
+                    break;
+                }
+                foreach (Node n in firstNode.Children)
+                {
+                    if (n.IsChecked == true)
+                    {
+                        XmlHelper.DeleteItem(firstNode.Text, n.Text);
+                    }
+                }
+            }
+            Restart();
+        }
+        #endregion
 
         #region Check, Uncheck and Invert all checkboxes
 
@@ -153,54 +214,5 @@ namespace CheckBox_Searcher
 
         #endregion
 
-        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if(HasSelectedNodes())
-            {
-                MessageWindow myWin = new MessageWindow();
-                myWin.ShowDialog();
-                if (myWin.DialogResult == true)
-                {
-                    DeleteSelectedNodes();
-                }
-            }  
-        }
-        private bool HasSelectedNodes()
-        {
-            foreach (Node firstNode in Nodes.First().Children)
-            {
-                if (firstNode.IsChecked == true)
-                {
-                    return true;
-                }
-                foreach (Node n in firstNode.Children)
-                {
-                    if (n.IsChecked == true)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-        private void DeleteSelectedNodes()
-        {
-            
-            foreach(Node firstNode in Nodes.First().Children)
-            {
-                if (firstNode.IsChecked == true)
-                {
-                    XmlHelper.DeleteUser(firstNode.Text);
-                    break;
-                }
-                foreach (Node n in firstNode.Children)
-                {
-                    if (n.IsChecked == true)
-                    {
-                        XmlHelper.DeleteItem(firstNode.Text, n.Text);
-                    }
-                }
-            }
-        }
     }
 }
