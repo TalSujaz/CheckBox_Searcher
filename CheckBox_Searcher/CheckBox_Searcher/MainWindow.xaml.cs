@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.Xml;
+using System.Xml.Linq;
+using System.Windows.Controls.Primitives;
+
 
 namespace CheckBox_Searcher
 {  
@@ -22,6 +26,7 @@ namespace CheckBox_Searcher
     public partial class MainWindow : Window
     {
         public ObservableCollection<Node> Nodes { get; private set; }
+        const string xmlConnction = @"C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\infoFile.xml";
         public MainWindow()
         {
             Nodes = new ObservableCollection<Node>();
@@ -34,24 +39,24 @@ namespace CheckBox_Searcher
         private void FillingTree()
         {
             Nodes.Clear();
-            for (int i = 0; i < 5; i++)
-            {
-                var level_1_items = new Node() { Text = " Level 1 Item " + (i + 1) };
-                for (int j = 0; j < 2; j++)
+            XElement xelement = XElement.Load(xmlConnction);
+                var level_1_items = new Node() { Text = " users ",IsChecked=false };
+                IEnumerable<XElement> users = xelement.Elements();
+                foreach(XElement user in users)
                 {
-                    var level_2_items = new Node() { Text = " Level 2 Item " + (j + 1) };
+                string myId = user.Attribute("id").Value;
+                var level_2_items = new Node() { Text = "Id "+myId , IsChecked = false };
                     level_2_items.Parent.Add(level_1_items);
                     level_1_items.Children.Add(level_2_items);
-                    for (int n = 0; n < 2; n++)
+                IEnumerable<XElement> userInfo = user.Elements();
+                foreach(XElement info in userInfo)
                     {
-                        var level_3_items = new Node() { Text = " Level 3 Item " + (n + 1) };
-                        level_3_items.Parent.Add(level_2_items);
-                        level_2_items.Children.Add(level_3_items);
+                    var level_3_items = new Node() { Text = info.Name+": "+info.Value,IsChecked=false };
+                    level_3_items.Parent.Add(level_2_items);
+                    level_2_items.Children.Add(level_3_items);
                     }
-                }
-
-                Nodes.Add(level_1_items);
             }
+            Nodes.Add(level_1_items); 
             treeView.ItemsSource = Nodes;
         }
 
@@ -149,5 +154,32 @@ namespace CheckBox_Searcher
 
         #endregion
 
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageWindow myWin = new MessageWindow();
+            myWin.ShowDialog(); 
+            if(myWin.DialogResult==true)
+            {
+                DeleteSelectedInfo();
+            }
+        }
+        private void DeleteSelectedInfo()
+        {
+            foreach(Node firstNode in Nodes)
+            {
+                if (firstNode.IsChecked == true)
+                {
+                    XmlHelper.DeleteUser(firstNode.Text);
+                    break;
+                }
+                 foreach(Node n in firstNode.Children)
+                {
+                    if (n.IsChecked == true)
+                    {
+                        XmlHelper.DeleteItem(firstNode.Text, n.Text);
+                    }
+                }
+            }
+        }
     }
 }

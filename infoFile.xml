@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Users>
-  <User>
+  <User id="1">
     <Name>Name1</Name>
     <Phone>050-0000001</Phone>
     <Mail>name1@gmail.com</Mail>
     <Address>street 1,city</Address>
   </User>
-  <User>
+  <User id="2">
     <Name>Name2</Name>
     <Phone>050-0000002</Phone>
     <Mail>name2@gmail.com</Mail>
     <Address>street 2,city</Address>
   </User>
-  <User>
+  <User id="3">
     <Name>Name3</Name>
     <Phone>050-0000003</Phone>
     <Mail>name3@gmail.com</Mail>
     <Address>street 3,city</Address>
   </User>
-  <User>
+  <User id="4">
     <Name>Name4</Name>
     <Phone>050-0000004</Phone>
     <Mail>name4@gmail.com</Mail>
     <Address>street 4,city</Address>
   </User>
-  <User>
+  <User id="5">
     <Name>Name5</Name>
     <Phone>050-0000005</Phone>
     <Mail>name5@gmail.com</Mail>
     <Address>street 5,city</Address>
   </User>
-  <User>
+  <User id="6">
     <Name>Name6</Name>
     <Phone>050-0000006</Phone>
     <Mail>name6@gmail.com</Mail>

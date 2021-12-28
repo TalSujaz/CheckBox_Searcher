@@ -40,3 +40,5 @@ C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_S
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.dll
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.genruntimeconfig.cache
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MessageWindow.baml
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MessageWindow.g.cs
