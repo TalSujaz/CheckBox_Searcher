@@ -74,6 +74,41 @@ namespace CheckBox_Searcher
                 }
             }
         }
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(!HasSelectedNodes())
+            {
+                AddAndEditWindow myWin = new AddAndEditWindow();
+                myWin.ShowDialog();
+                Restart();
+            }
+        }
+         private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Node firstNode in Nodes.First().Children)
+            {
+                if (firstNode.IsChecked == true)
+                {
+                    AddAndEditWindow myWin = new AddAndEditWindow(firstNode.Text);
+                    myWin.ShowDialog();
+                    break;
+                }
+                foreach (Node n in firstNode.Children)
+                {
+                    if (n.IsChecked == true)
+                    {
+                        int charLocation = n.Text.IndexOf(":", StringComparison.Ordinal);
+
+                        if (charLocation > 0)
+                        {
+                            AddAndEditWindow myWin = new AddAndEditWindow(firstNode.Text, n.Text.Substring(0, charLocation));
+                            myWin.ShowDialog();
+                        }    
+                    }
+                }
+            }
+            Restart();
+        }
         #endregion
 
         #region Privte methods
@@ -145,6 +180,7 @@ namespace CheckBox_Searcher
             }
             Restart();
         }
+       
         #endregion
 
         #region Check, Uncheck and Invert all checkboxes
@@ -214,5 +250,6 @@ namespace CheckBox_Searcher
 
         #endregion
 
+       
     }
 }

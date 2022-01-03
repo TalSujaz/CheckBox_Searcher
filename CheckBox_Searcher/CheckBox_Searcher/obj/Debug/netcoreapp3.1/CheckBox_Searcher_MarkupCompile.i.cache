@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\App.xaml
-2-430616965
+3-1297604903
 
-8433375625
+101726150263
 192-1533232326
-MainWindow.xaml;MessageWindow.xaml;
+AddAndEditWindow.xaml;MainWindow.xaml;MessageWindow.xaml;
 
 False
 

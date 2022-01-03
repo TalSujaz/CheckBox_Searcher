@@ -36,4 +36,10 @@
     <Mail>name6@gmail.com</Mail>
     <Address>street 6,city</Address>
   </User>
+  <User id="7">
+    <Name>Name7</Name>
+    <Phone>050000007</Phone>
+    <Mail>name7@gmail.com</Mail>
+    <Address>street 7, city</Address>
+  </User>
 </Users>
