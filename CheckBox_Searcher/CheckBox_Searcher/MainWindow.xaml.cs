@@ -109,6 +109,14 @@ namespace CheckBox_Searcher
             }
             Restart();
         }
+        private void searchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Search();
+        }
+        private void SearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            Search();
+        }
         #endregion
 
         #region Privte methods
@@ -119,18 +127,18 @@ namespace CheckBox_Searcher
         {
             Nodes.Clear();
             XElement xelement = XElement.Load(SettingsHelper.xmlConncation);
-            var level_1_items = new Node() { Text = " users ", IsChecked = false };
+            var level_1_items = new Node() { Text = " users ", IsChecked = false, IsVisible=Visibility.Visible };
             IEnumerable<XElement> users = xelement.Elements();
             foreach (XElement user in users)
             {
                 string myId = user.Attribute("id").Value;
-                var level_2_items = new Node() { Text = "Id " + myId, IsChecked = false };
+                var level_2_items = new Node() { Text = "Id " + myId, IsChecked = false, IsVisible = Visibility.Visible };
                 level_2_items.Parent.Add(level_1_items);
                 level_1_items.Children.Add(level_2_items);
                 IEnumerable<XElement> userInfo = user.Elements();
                 foreach (XElement info in userInfo)
                 {
-                    var level_3_items = new Node() { Text = info.Name + ": " + info.Value, IsChecked = false };
+                    var level_3_items = new Node() { Text = info.Name + ": " + info.Value, IsChecked = false, IsVisible = Visibility.Visible };
                     level_3_items.Parent.Add(level_2_items);
                     level_2_items.Children.Add(level_3_items);
                 }
@@ -180,7 +188,56 @@ namespace CheckBox_Searcher
             }
             Restart();
         }
-       
+       public void Search()
+       {
+            foreach (Node firstNode in Nodes.First().Children)
+            {
+                SearchResult(firstNode);
+            }
+        }
+        public Visibility SearchResult(Node myNode)
+        {
+            Visibility visibility= Visibility.Hidden;
+            if (myNode.Children == null)
+            {
+                if(myNode.Text.Contains(SearchBox.Text))
+                {
+                    myNode.IsVisible = Visibility.Visible;
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    myNode.IsVisible = Visibility.Hidden; 
+                    return Visibility.Hidden;
+                }
+            }
+            else
+            {
+                foreach(Node node in myNode.Children)
+                {
+                    visibility = SearchResult(node);
+                }
+            }
+            if (visibility == Visibility.Visible)
+            {
+                myNode.IsVisible = Visibility.Visible;
+                return Visibility.Visible;
+            }
+            else
+            {
+                if (myNode.Text.Contains(SearchBox.Text))
+                {
+                    myNode.IsVisible = Visibility.Visible;
+                    return Visibility.Visible;
+                }
+                else
+                {
+                    myNode.IsVisible = Visibility.Hidden;
+                    return Visibility.Hidden;
+                }
+            }
+
+        }
         #endregion
 
         #region Check, Uncheck and Invert all checkboxes
@@ -248,8 +305,7 @@ namespace CheckBox_Searcher
             }
         }
 
-        #endregion
 
-       
+        #endregion
     }
 }

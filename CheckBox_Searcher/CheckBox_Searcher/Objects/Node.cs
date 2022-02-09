@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
@@ -19,10 +20,21 @@ namespace CheckBox_Searcher
         private string id;
         private bool? isChecked = true;
         private bool isExpanded;
+        private Visibility isVisible;
 
         public ObservableCollection<Node> Children
         {
             get { return this.children; }
+        }
+
+        public Visibility IsVisible
+        {
+            get { return this.isVisible; }
+            set
+            {
+                this.isVisible = value;
+                RaisePropertyChanged("isVisible");
+            }
         }
 
         public ObservableCollection<Node> Parent
