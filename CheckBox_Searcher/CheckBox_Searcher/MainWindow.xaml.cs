@@ -115,7 +115,10 @@ namespace CheckBox_Searcher
         }
         private void SearchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            Search();
+            if (SearchBox.Text == "")
+                Restart();
+            else
+                Search();
         }
         #endregion
 
@@ -145,6 +148,7 @@ namespace CheckBox_Searcher
             }
             Nodes.Add(level_1_items);
             treeView.ItemsSource = Nodes;
+            ExpandTree(Nodes,true);
         }
         private bool HasSelectedNodes()
         {
@@ -170,7 +174,6 @@ namespace CheckBox_Searcher
         }
         private void DeleteSelectedNodes()
         {
-
             foreach (Node firstNode in Nodes.First().Children)
             {
                 if (firstNode.IsChecked == true)
@@ -194,31 +197,38 @@ namespace CheckBox_Searcher
             {
                 SearchResult(firstNode);
             }
+            SearchResultTree();
         }
+
         public Visibility SearchResult(Node myNode)
         {
-            Visibility visibility= Visibility.Hidden;
+            Visibility visibility = Visibility.Hidden;
+            bool HasVisibleChild = false;
             if (myNode.Children == null)
             {
-                if(myNode.Text.Contains(SearchBox.Text))
+                if (myNode.Text.Contains(SearchBox.Text))
                 {
                     myNode.IsVisible = Visibility.Visible;
                     return Visibility.Visible;
                 }
                 else
                 {
-                    myNode.IsVisible = Visibility.Hidden; 
+                    myNode.IsVisible = Visibility.Hidden;
                     return Visibility.Hidden;
                 }
             }
             else
             {
-                foreach(Node node in myNode.Children)
-                {
+                foreach (Node node in myNode.Children)
+                {                   
                     visibility = SearchResult(node);
+                    if (visibility == Visibility.Visible)
+                    {
+                        HasVisibleChild = true;
+                    }
                 }
             }
-            if (visibility == Visibility.Visible)
+            if (HasVisibleChild)
             {
                 myNode.IsVisible = Visibility.Visible;
                 return Visibility.Visible;
@@ -237,6 +247,33 @@ namespace CheckBox_Searcher
                 }
             }
 
+        }
+
+        public void SearchResultTree()
+        {
+            ObservableCollection<Node> SearchNode = new ObservableCollection<Node>();
+            var level_1_items = new Node() { Text = " users ", IsChecked = false, IsVisible = Visibility.Visible };
+            foreach (Node firstNode in Nodes.First().Children)
+            {
+                if (firstNode.IsVisible == Visibility.Visible)
+                {
+                    var level_2_items = new Node() { Text = firstNode.Text, IsChecked = firstNode.IsChecked, IsVisible = Visibility.Visible };
+                    level_2_items.Parent.Add(level_1_items);
+                    level_1_items.Children.Add(level_2_items);
+                    foreach (Node n in firstNode.Children)
+                    {
+                        if (n.IsVisible == Visibility.Visible)
+                        {
+                            var level_3_items = new Node() { Text = n.Text, IsChecked = n.IsChecked, IsVisible = Visibility.Visible };
+                            level_3_items.Parent.Add(level_2_items);
+                            level_2_items.Children.Add(level_3_items);
+                        }
+                    }
+                }    
+            }
+            SearchNode.Add(level_1_items);
+            Nodes = SearchNode;
+            treeView.ItemsSource = Nodes;
         }
         #endregion
 
