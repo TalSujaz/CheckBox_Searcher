@@ -21,11 +21,22 @@ namespace CheckBox_Searcher
     {
         public bool IsEdit;
         public string EditId;
+
+        #region Ctor
+
+        /// <summary>
+        /// Creates the MessageWindow isEdit var is false
+        /// </summary>
         public AddAndEditWindow()
         {            
             InitializeComponent();
             IsEdit = false;
         }
+
+        /// <summary>
+        /// Creates the MessageWindow isEdit var is true filles the textbox with the user info from the xml
+        /// </summary>
+        /// <param name="ID">The user id in the xml.</param>
         public AddAndEditWindow(string ID)
         {
             InitializeComponent();
@@ -37,6 +48,12 @@ namespace CheckBox_Searcher
             IsEdit = true;
             EditId = ID;
         }
+
+        /// <summary>
+        /// Creates the MessageWindow isEdit var is true filles the textbox with the user info from the xml
+        /// </summary>
+        /// <param name="ID">The user id in the xml.</param>
+        /// <param name="ItemElementName">the name of the element that needs editing.</param>
         public AddAndEditWindow(string ID,string ItemElementName)
         {
             InitializeComponent();
@@ -63,6 +80,15 @@ namespace CheckBox_Searcher
                     break;
             }
         }
+        #endregion
+
+        #region UI methods
+
+        /// <summary>
+        /// Taking the new info from the textbox and changes it in the xml using the XmlHelper.EditUser() or XmlHelper.AddUser() methods
+        /// </summary>
+        /// <param name="sender">The SaveBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             string name, phone, mail, address;
@@ -87,5 +113,6 @@ namespace CheckBox_Searcher
             }
             
         }
+        #endregion
     }
 }

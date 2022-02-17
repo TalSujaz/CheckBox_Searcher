@@ -10,6 +10,12 @@ namespace CheckBox_Searcher.Objects
         public string Phone;
         public string Mail;
         public string Address;
+
+        #region Ctor
+
+        /// <summary>
+        /// Creating the XmlItem
+        /// </summary>
         public XmlItem(string Name, string Phone, string Mail, string Address)
         {
             this.Name = Name;
@@ -17,5 +23,6 @@ namespace CheckBox_Searcher.Objects
             this.Mail = Mail;
             this.Address = Address;
         }
+        #endregion
     }
 }

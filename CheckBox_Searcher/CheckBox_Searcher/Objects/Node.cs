@@ -9,11 +9,6 @@ namespace CheckBox_Searcher
 {
     public class Node : INotifyPropertyChanged
     {
-        public Node()
-        {
-            this.id = Guid.NewGuid().ToString();
-        }
-
         private ObservableCollection<Node> children = new ObservableCollection<Node>();
         private ObservableCollection<Node> parent = new ObservableCollection<Node>();
         private string text;
@@ -22,6 +17,18 @@ namespace CheckBox_Searcher
         private bool isExpanded;
         private Visibility isVisible;
 
+        #region Ctor
+
+        /// <summary>
+        /// Creating the Node class
+        /// </summary>
+        public Node()
+        {
+            this.id = Guid.NewGuid().ToString();
+        }
+        #endregion
+
+        #region Getters Setters
         public ObservableCollection<Node> Children
         {
             get { return this.children; }
@@ -102,7 +109,9 @@ namespace CheckBox_Searcher
                 }
             }
         }
+        #endregion
 
+        #region UI Methods
         /// <summary>
         /// Check child and parent items
         /// </summary>
@@ -155,6 +164,7 @@ namespace CheckBox_Searcher
                 if (paren.Parent.Count != 0) CheckParentNodes(paren.Parent);
             }
         }
+        #endregion
     }
     public struct CheckBoxId
     {

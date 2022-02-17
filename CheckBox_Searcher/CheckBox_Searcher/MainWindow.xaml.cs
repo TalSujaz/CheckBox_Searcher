@@ -19,20 +19,23 @@ using System.Windows.Controls.Primitives;
 using CheckBox_Searcher.Helpers;
 
 namespace CheckBox_Searcher
-{  
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+{    
     public partial class MainWindow : Window
     {
         public ObservableCollection<Node> Nodes { get; private set; }
+
+        #region Ctor
+        /// <summary>
+        /// Creates the MainWindow, using the method FillingTree()
+        /// </summary>
         public MainWindow()
         {
             Nodes = new ObservableCollection<Node>();
             InitializeComponent();
             FillingTree();
         }
-      
+        #endregion
+
         #region UI methods
         /// <summary>
         /// Take Id from CheckBox Uid and transfer value to CheckBoxId struct
@@ -58,10 +61,22 @@ namespace CheckBox_Searcher
                 CheckBoxId.checkBoxId = currentCheckBox.Uid;
             }
         }
+
+        /// <summary>
+        /// Calling the Privte Reset() method
+        /// </summary>
+        /// <param name="sender">The restartBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void restartBtn_Click(object sender, RoutedEventArgs e)
         {
             Restart();
         }
+
+        /// <summary>
+        /// Calling the Privte DeleteSelectedNodes() method if the tree HasSelectedNodes()
+        /// </summary>
+        /// <param name="sender">The DeleteBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             if (HasSelectedNodes())
@@ -74,6 +89,12 @@ namespace CheckBox_Searcher
                 }
             }
         }
+
+        /// <summary>
+        /// Opening the AddAndEditWindow method if the tree HasSelectedNodes()
+        /// </summary>
+        /// <param name="sender">The AddBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             if(!HasSelectedNodes())
@@ -83,7 +104,13 @@ namespace CheckBox_Searcher
                 Restart();
             }
         }
-         private void editBtn_Click(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Opening the AddAndEditWindow method with the selected text in the tree
+        /// </summary>
+        /// <param name="sender">The editBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
+        private void editBtn_Click(object sender, RoutedEventArgs e)
         {
             foreach (Node firstNode in Nodes.First().Children)
             {
@@ -109,10 +136,25 @@ namespace CheckBox_Searcher
             }
             Restart();
         }
+
+        /// <summary>
+        /// Calling the privte Search method and calling the reset if SearchBox is empty
+        /// </summary>
+        /// <param name="sender">The searchBtn clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void searchBtn_Click(object sender, RoutedEventArgs e)
         {
-            Search();
+            if (SearchBox.Text == "")
+                Restart();
+            else
+                Search();
         }
+
+        /// <summary>
+        /// Calling the privte Search method and calling the reset if SearchBox is empty
+        /// </summary>
+        /// <param name="sender">The SearchBox check with "" text.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void SearchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (SearchBox.Text == "")
@@ -123,8 +165,9 @@ namespace CheckBox_Searcher
         #endregion
 
         #region Privte methods
+
         /// <summary>
-        /// Filling tree different values
+        /// Creating chackBox tree by reading the info at the xml file
         /// </summary>
         private void FillingTree()
         {
@@ -150,6 +193,11 @@ namespace CheckBox_Searcher
             treeView.ItemsSource = Nodes;
             ExpandTree(Nodes,true);
         }
+
+        /// <summary>
+        /// Chacking if the has selected nodes
+        /// </summary>
+        ///<returns>true if there is selected nodes and false if there isn't</returns>
         private bool HasSelectedNodes()
         {
             foreach (Node firstNode in Nodes.First().Children)
@@ -168,10 +216,18 @@ namespace CheckBox_Searcher
             }
             return false;
         }
+
+        /// <summary>
+        /// Calling the FillingTree() method
+        /// </summary>
         private void Restart()
         {
             FillingTree();
         }
+
+        /// <summary>
+        /// Deleting the chacked nodes using the XmlHelper.DeleteUser() method
+        /// </summary>
         private void DeleteSelectedNodes()
         {
             foreach (Node firstNode in Nodes.First().Children)
@@ -191,15 +247,21 @@ namespace CheckBox_Searcher
             }
             Restart();
         }
-       public void Search()
+
+        /// <summary>
+        /// Searching nodes using the SearchResult() and creating new tree with the SearchResultTree() method
+        /// </summary>
+        public void Search()
        {
-            foreach (Node firstNode in Nodes.First().Children)
-            {
-                SearchResult(firstNode);
-            }
+            SearchResult(Nodes.First());
             SearchResultTree();
         }
 
+        /// <summary>
+        /// Recursive search on the tree
+        /// </summary>
+        /// <param name="myNode">The node that should be searched.</param>
+        ///<returns>Visibility.Visible if the nodes has part of the SearchBox text and Visibility.Hidden if there isn't</returns>
         public Visibility SearchResult(Node myNode)
         {
             Visibility visibility = Visibility.Hidden;
@@ -249,6 +311,9 @@ namespace CheckBox_Searcher
 
         }
 
+        /// <summary>
+        /// Creating new nodes tre the Contains only the nodes their Visibility.Visible from the old tree
+        /// </summary>
         public void SearchResultTree()
         {
             ObservableCollection<Node> SearchNode = new ObservableCollection<Node>();
@@ -277,62 +342,33 @@ namespace CheckBox_Searcher
         }
         #endregion
 
-        #region Check, Uncheck and Invert all checkboxes
-
-        private void buttonCheckAll_Click(object sender, RoutedEventArgs e)
-        {
-            CheckedTree(Nodes, true);
-        }
-
-        private void buttonUncheckAll_Click(object sender, RoutedEventArgs e)
-        {
-            CheckedTree(Nodes, false);
-        }
-
-        private void CheckedTree(ObservableCollection<Node> items, bool isChecked)
-        {
-            foreach (Node item in items)
-            {
-                item.IsChecked = isChecked;
-                if (item.Children.Count != 0) CheckedTree(item.Children, isChecked);
-            }
-        }
-
-        private void buttonInvert_Click(object sender, RoutedEventArgs e)
-        {
-            CheckBoxId.checkBoxId = "";
-            InvertTree(Nodes);
-        }
-
-        private void InvertTree(ObservableCollection<Node> items)
-        {
-            foreach (Node item in items)
-            {
-                if (item.IsChecked != null)
-                {
-                    if (item.IsChecked == true) item.IsChecked = false;
-                    else item.IsChecked = true;
-                    if (item.Parent.Count != 0 && item.Parent[0].IsChecked == true) item.IsChecked = true;
-                    if (item.Parent.Count != 0 && item.Parent[0].IsChecked == false) item.IsChecked = false;
-                }
-                if (item.Children.Count != 0) InvertTree(item.Children);
-            }
-        }
-
-        #endregion
-
         #region Expand and Collapse items
 
+        /// <summary>
+        /// Calling the ExpandTree() method
+        /// </summary>
+        /// <param name="sender">The buttonExpand clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void buttonExpand_Click(object sender, RoutedEventArgs e)
         {
             ExpandTree(Nodes, true);
         }
 
+        /// <summary>
+        /// Calling the ExpandTree() method
+        /// </summary>
+        /// <param name="sender">The buttonCollapse clicked.</param>
+        /// <param name="e">Parameters associated to the mouse event.</param>
         private void buttonCollapse_Click(object sender, RoutedEventArgs e)
         {
             ExpandTree(Nodes, false);
         }
 
+        /// <summary>
+        /// Recursive change of the node.IsExpanded var
+        /// </summary>
+        /// <param name="items">List of ObservableCollection<Node> that needs to change.</param>
+        /// <param name="isExpanded">bool var that says if the list should be expanded.</param>
         private void ExpandTree(ObservableCollection<Node> items, bool isExpanded)
         {
             foreach (Node item in items)
