@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckBox_Searcher"
         mc:Ignorable="d"
-        Title="CheckBox_Searcher" Height="450" Width="800">
+        Title="CheckBox_Searcher" Height="450" Width="820">
     <Window.Resources>
         <HierarchicalDataTemplate DataType="{x:Type local:Node}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal" Visibility="{Binding IsVisible}">
@@ -26,28 +26,28 @@
             <StatusBar Grid.Row="0"  HorizontalAlignment="Stretch"  Background="#FFDFEDFF" Margin="0,0,6,0">
                 <Button x:Name="AddBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" BorderThickness="0" Width="30" Height="30" Click="AddBtn_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-add-30.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-add-30.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="DeleteBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" BorderThickness="0" Width="30" Height="30" Click="DeleteBtn_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-delete-50.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-delete-50.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="editBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" BorderThickness="0" Width="30" Height="30" Click="editBtn_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-edit-50.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-edit-50.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="restartBtn" FlowDirection="LeftToRight"  HorizontalAlignment="Left"  VerticalAlignment="Top" BorderThickness="0" Width="30" Height="30" Click="restartBtn_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-restart-50.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-restart-50.png"/>
                     </Button.Background>
                 </Button>
                 <TextBox x:Name="SearchBox" Width="600" Height="30" HorizontalAlignment="Right" ToolTip="Enter your search word" KeyDown="SearchBox_KeyDown"/>
                 <Button x:Name="searchBtn"  HorizontalAlignment="Right"  VerticalAlignment="Top" BorderThickness="0" Width="30" Height="30" Click="searchBtn_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-search-50.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-search-50.png"/>
                     </Button.Background>
                 </Button>
             </StatusBar>
@@ -60,12 +60,12 @@
                 <TreeView Name="treeView" Grid.Column="0" Background="#FFDFEDFF" BorderThickness="0" />
                 <Button x:Name="Expand" FlowDirection="RightToLeft" Grid.Column="1"  HorizontalAlignment="Right"  VerticalAlignment="Top" Width="30" Height="30" BorderThickness="0" Click="buttonExpand_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-chevron-down-24.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-chevron-down-24.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="Collapse" FlowDirection="RightToLeft" Grid.Column="2"  HorizontalAlignment="Right"  VerticalAlignment="Top" Width="30" Height="30" BorderThickness="0" Click="buttonCollapse_Click" >
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\Icons\icons8-chevron-up-24.png"/>
+                        <ImageBrush ImageSource="/Icons/icons8-chevron-up-24.png"/>
                     </Button.Background>
                 </Button>
             </Grid>

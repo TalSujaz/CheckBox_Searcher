@@ -6,4 +6,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Icons\icons8-add-30.png" />
+    <None Remove="Icons\icons8-chevron-down-24.png" />
+    <None Remove="Icons\icons8-chevron-up-24.png" />
+    <None Remove="Icons\icons8-delete-50.png" />
+    <None Remove="Icons\icons8-edit-50.png" />
+    <None Remove="Icons\icons8-restart-50.png" />
+    <None Remove="Icons\icons8-search-50.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\icons8-add-30.png" />
+    <Resource Include="Icons\icons8-chevron-down-24.png" />
+    <Resource Include="Icons\icons8-chevron-up-24.png" />
+    <Resource Include="Icons\icons8-delete-50.png" />
+    <Resource Include="Icons\icons8-edit-50.png" />
+    <Resource Include="Icons\icons8-restart-50.png" />
+    <Resource Include="Icons\icons8-search-50.png" />
+  </ItemGroup>
+
 </Project>

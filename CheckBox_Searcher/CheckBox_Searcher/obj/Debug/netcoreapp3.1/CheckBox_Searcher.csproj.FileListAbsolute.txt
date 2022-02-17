@@ -25,7 +25,6 @@ C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_S
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.runtimeconfig.dev.json
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.dll
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\bin\Debug\netcoreapp3.1\CheckBox_Searcher.pdb
-C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
@@ -44,3 +43,4 @@ C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_S
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\MessageWindow.g.cs
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\AddAndEditWindow.g.cs
 C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\AddAndEditWindow.baml
+C:\Users\User\Desktop\Git Uploads\CheckBox_Searcher\CheckBox_Searcher\CheckBox_Searcher\obj\Debug\netcoreapp3.1\CheckBox_Searcher.csproj.AssemblyReference.cache
